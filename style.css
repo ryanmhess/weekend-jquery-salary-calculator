@@ -17,9 +17,10 @@ h1 {
 }
 
 .container {
-    max-width: 900px;
-    margin: 0 auto;
-    height: 600px;
+    max-width: 95%;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #E3E4DE;
 }
 
@@ -37,24 +38,24 @@ tr:nth-child(even){
     background-color: #f2f2f2;
 }
 
-th {
+/* th {
     background-color: #2C3852;
     color: white;
     font-size: 18px;
-}
+} */
 
 input {
-    margin: 20px;
+    margin: 10px;
     font-size: 22px;
-    width: 300px;
+    width: auto;
 }
 
 button {
-    margin: 20px;
+    margin: 10px;
     background-color: #2C3852; /* Green */
-    border: none;
+    border: ridge;
     color: white;
-    padding: 8px 14px;
+    padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -70,9 +71,26 @@ button:active {
     background-color: #1d263b;
 }
 
-.inputField{
+.inputField {
     text-align: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    /* display: inline-flex;
+    flex-direction: unset;
+    flex-wrap: nowrap; */
+    /* padding: 10px 20px;
+    width: 200px; */
+}
+
+thead{
+    background-color: #2C3852;
+    color: #E3E4DE;
+}
+
+thead >tr >td{
+    border-style: none dotted;
+    border-color: #7c8fb8;
+    text-align: center;
+}
+
+table{
+    text-align: center;
 }

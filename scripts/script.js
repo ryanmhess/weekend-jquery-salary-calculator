@@ -1,70 +1,37 @@
 
-const petOne = {name: 'Charlie', type: 'dog', age: 6};
-const petTwo = {name: 'Thorin', type: 'rabbit', age: 4};
-const petThree = {name: 'Cedar', type: 'dog', age: 7};
-const petFour = {name: 'Juniper', type: 'cat', age: 3};
+const employeeOne = {firstName: 'Roy', lastName: 'Smith', empID: 9623, empTitle: 'Quality Assurance', annualSalary: 48000};
+const employeeTwo = {firstName: 'Thorin', lastName: 'Charlie', empID: 8724, empTitle: 'Support Team', annualSalary: 58000};
+const employeeThree = {firstName: 'Cedar', lastName: 'Charlie', empID: 4521, empTitle: 'Team Lead', annualSalary: 80000};
 
-const pets = [petOne, petTwo, petThree, petFour];
+const employees = [employeeOne, employeeTwo, employeeThree];
 
-$(readyNow); // Shorthand for $(document).ready(readyNow);
+$(document).ready(readyNow);
 
 function readyNow() {
-  appendDom();
-  $('#clear-btn').on('click', donateThePets);
-  $('#add-btn').on('click', adoptThePets);
+    // appendDom();
+    employeeList(employees);
+    // $('#clear-btn').on('click', donateThePets);
+    $('#add-btn').on('click', addEmployee);
 }
 
-function appendDom() {
-  $('.container').append(`
-    <h1>Challenge 170</h1>
+function employeeList(employees){
+    for(let employee of employees){
+        employeeAssign(employee);
+    }
+}
+
+function employeeAssign(employee){
+    $('#tableBody').append(`
+    <tr>
+    <td>${employee.firstName}</td>
+    <td>${employee.lastName}</td>
+    <td>${employee.empID}</td>
+    <td>${employee.empTitle}</td>
+    <td>${employee.annualSalary}</td>
+    <td><button id="remove-btn">DELETE</button></td>
+    </tr>`);
+}
+
+function addEmployee(){
     
-    <button id="clear-btn">Donate the Pets</button>
-    <button id="add-btn">Adopt the Pet</button>
-    <input class="inputField" id="petName" placeholder="name">
-    <input class="inputField id="petType" placeholder="type">
-    <input class="inputField id="petAge" placeholder="age">
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Age</th>
-        </tr>
-      </thead>
-      <tbody id="tableBody">
-      </tbody>
-    </table>
-  `);
-
-  // YOUR CODE HERE
-  // Remember, small steps!
-
-  // Display each of the pets on the DOM.
-  petSort(pets);
-  // Add an input field that allows users to add new pets from the index page.
-  
-  // Add a button that clears out the list of pets.
-}
-
-function petSort(pets){
-  for(let pet of pets){
-    petAssign(pet);
-  }
-}
-
-function petAssign(pet){
-  $('#tableBody').append(`
-  <tr>
-    <td>${pet.name}</td>
-    <td>${pet.type}</td>
-    <td>${pet.age}</td>
-  </tr>`);
-}
-
-function donateThePets(){
-  $('tbody').empty()
-}
-
-function adoptThePets(){
-
 }
