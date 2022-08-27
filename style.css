@@ -5,7 +5,14 @@ body, html {
     font-family: sans-serif;
 }
 
-h1 {
+img{
+    width: auto;
+    height: auto;
+    max-width: 300px;
+    max-height: 150px;
+}
+
+/* h1 {
     margin: 0;
     text-align: center;
     padding-top: 20px;
@@ -44,7 +51,7 @@ tr:nth-child(even){
     font-size: 18px;
 } */
 
-input {
+/*input {
     margin: 10px;
     font-size: 22px;
     width: auto;
@@ -52,7 +59,7 @@ input {
 
 button {
     margin: 10px;
-    background-color: #2C3852; /* Green */
+    background-color: #2C3852;
     border: ridge;
     color: white;
     padding: 10px 20px;
@@ -73,11 +80,7 @@ button:active {
 
 .inputField {
     text-align: center;
-    /* display: inline-flex;
-    flex-direction: unset;
-    flex-wrap: nowrap; */
-    /* padding: 10px 20px;
-    width: 200px; */
+    
 }
 
 thead{
@@ -93,4 +96,4 @@ thead >tr >td{
 
 table{
     text-align: center;
-}
+} */

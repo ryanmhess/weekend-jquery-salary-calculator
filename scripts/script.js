@@ -8,30 +8,48 @@ const employees = [employeeOne, employeeTwo, employeeThree];
 $(document).ready(readyNow);
 
 function readyNow() {
-    // appendDom();
     employeeList(employees);
-    // $('#clear-btn').on('click', donateThePets);
-    $('#add-btn').on('click', addEmployee);
+    $('#add-btn').on('click', employeeAdd);
+    $('#remove-btn').on('click', employeeAdd);
+    $(document).on('click', '.delete-btn', employeeDelete)
 }
 
-function employeeList(employees){
+function employeeList(){
+    $('.tableBody').empty();
     for(let employee of employees){
         employeeAssign(employee);
     }
-}
+}   //  end employeeList function
 
 function employeeAssign(employee){
-    $('#tableBody').append(`
+    $('.tableBody').append(`
     <tr>
-    <td>${employee.firstName}</td>
-    <td>${employee.lastName}</td>
-    <td>${employee.empID}</td>
-    <td>${employee.empTitle}</td>
-    <td>${employee.annualSalary}</td>
-    <td><button id="remove-btn">DELETE</button></td>
+        <td>${employee.firstName}</td>
+        <td>${employee.lastName}</td>
+        <td>${employee.empID}</td>
+        <td>${employee.empTitle}</td>
+        <td>${employee.annualSalary}</td>
+        <td>
+            <button class="delete-btn">DELETE</button>
+        </td>
     </tr>`);
-}
+}   //  end employeeAssign function
 
-function addEmployee(){
+function employeeAdd(){
+    let employeeNew = {
+        firstName: $('#firstName').val(),
+        lastName: $('#lastName').val(),
+        empID: Number($('#empID').val()),
+        empTitle: $('#empTitle').val(),
+        annualSalary: Number($('#annualSalary').val())
+    }
+    employees.push(employeeNew)
+    employeeList();
+}   //  end employeeNew function
+
+function employeeDelete(){
+    console.log($(this));
+    $(this).filter(employees);
+    $(this).closest('tr').remove();
     
-}
+}   //  end employeeDelete function
