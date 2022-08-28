@@ -1,49 +1,144 @@
-body, html {
-    background-color: cornflowerblue;
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
+body{
+    background-color: #FFBBB4;
 }
 
-img{
-    width: auto;
-    height: auto;
-    max-width: 300px;
-    max-height: 150px;
-}
-
-/* h1 {
-    margin: 0;
+header{
     text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-weight: 400;
+    font-size: 40px;
+    border-style: solid;
+    background-color: #71A95A;
+    border-color: #007944;
+    border-width: 8px;
+    margin: 50px;
+}
+
+#inputWindow{
+    padding: 5px;
+    background-color: #F35588;
+    display: grid;
+    height: 25vh;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
+    grid-template-areas: 
+        "firstName imageWindow"
+        "lastName imageWindow"
+        "empID imageWindow"
+        "empTitle imageWindow"
+        "annualSalary imageWindow"
+        "buttonWindow imageWindow";
+}
+
+.inputField{
+    margin: 5px;
+    border: outset;
+    color: #EFEFEF;
+    background-color: #cef1c1;
+    border-color: #007944;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+#firstName{
+    grid-area: firstName;
+}
+
+#lastName{
+    grid-area: lastName;
+}
+
+#empID{
+    grid-area: empID;
+}
+
+#empTitle{
+    grid-area: empTitle;
+}
+
+#annualSalary{
+    grid-area: annualSalary;
+}
+
+::placeholder{
+    color: #4e4245;
+    font-weight: bold;
+}
+
+#firstName, #lastName, #empID, #empTitle{
+    /* margin-bottom: 10px; */
+}
+
+#buttonWindow{
+    grid-area: buttonWindow;
+    text-align: center;
+}
+
+#add-btn{
+    width: 50%;
+    margin: 5px;
+    color: black;
+    border: outset;
+    border-color: #007944;
+    background-color: #71A95A;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+#imageWindow{
+    margin: 0.4%;
+    background-color: #F35588;
+    grid-area: imageWindow;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+img{  
     width: 100%;
-    background-color: #87A6AB;
-    color: #F7F7F7;
 }
 
-.container {
-    max-width: 95%;
-    margin-top: 2%;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #E3E4DE;
+table{
+    display: grid;
+    height: 25vh;
+    grid-template-columns: 4fr;
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+    grid-template-areas: 
+        "tableHead"
+        "tableBody"
+        "tableFoot";
 }
 
-table {
+#tableHead{
+    background-color: chartreuse;
+    grid-area: tableHead;
+    width: 100vh;
+}
+
+#tableBody{
+    background-color: #EFEFEF;
+    grid-area: tableBody;
+    width: 100vh;
+}
+
+#tableFoot{
+    background-color: #007944;
+    grid-area: tableFoot;
+    width: 100vh;
+}
+
+/* table {
     border-collapse: collapse;
     width: 100%;
-}
+} */
 
-th, td {
+/* th, td {
     text-align: left;
     padding: 8px;
-}
+} */
 
-tr:nth-child(even){
+/* tr:nth-child(even){
     background-color: #f2f2f2;
-}
+} */
 
 /* th {
     background-color: #2C3852;
@@ -51,13 +146,7 @@ tr:nth-child(even){
     font-size: 18px;
 } */
 
-/*input {
-    margin: 10px;
-    font-size: 22px;
-    width: auto;
-}
-
-button {
+/* button {
     margin: 10px;
     background-color: #2C3852;
     border: ridge;
@@ -68,32 +157,4 @@ button {
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #55627d;
-}
-
-button:active {
-    background-color: #1d263b;
-}
-
-.inputField {
-    text-align: center;
-    
-}
-
-thead{
-    background-color: #2C3852;
-    color: #E3E4DE;
-}
-
-thead >tr >td{
-    border-style: none dotted;
-    border-color: #7c8fb8;
-    text-align: center;
-}
-
-table{
-    text-align: center;
 } */

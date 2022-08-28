@@ -17,7 +17,7 @@ function readyNow() {
 }   //  end readyNow function
 
 function employeeList(){
-    $('.tableBody').empty();
+    $('#tableBody').empty();
     annualSalaryTotal = 0;
     for(let employee of employees){
         employeeAssign(employee);
@@ -26,7 +26,7 @@ function employeeList(){
 }   //  end employeeList function
 
 function employeeAssign(employee){
-    $('.tableBody').append(`
+    $('#tableBody').append(`
     <tr>
         <td>${employee.firstName}</td>
         <td>${employee.lastName}</td>
@@ -71,8 +71,8 @@ function employeeDelete(){
 
 function employeeSalaryTotal(employee){
     annualSalaryTotal += employee.annualSalary;
-    $('.tableFoot').empty();
-    $('.tableFoot').append(`
+    $('#tableFoot').empty();
+    $('#tableFoot').append(`
     <tr>
         <td>${annualSalaryTotal}</td>
     </tr>`);

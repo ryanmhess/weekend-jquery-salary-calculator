@@ -13,40 +13,36 @@
     <header>
         <h1>Salary Calculator</h1>
     </header>
-    <main class="container">
-        <section class="inputSection">
-            <div class="inputWindow">
-                <input class="inputField" id="firstName" placeholder="First Name" type="text">
-                <input class="inputField" id="lastName" placeholder="Last Name" type="text">
-                <input class="inputField" id="empID" placeholder="ID" type="number">
-                <input class="inputField" id="empTitle" placeholder="Title" type="text">
-                <input class="inputField" id="annualSalary" placeholder="Annual Salary" type="number">
-            </div>
-            <div class="buttonWindow">
-                <button id="add-btn">Submit</button>
-            </div>
-            <div class="imageWindow">
-                <img src="Other/office.jpeg">
-            </div>
-        </section>
-        <table class="tableSection">
-            <thead>
-                <tr>
-                    <td>First Name</td>
-                    <td>Last Name</td>
-                    <td>Employee ID</td>
-                    <td>Title</td>
-                    <td>Annual Salary</td>
-                    <td></td>
-                </tr>
-            </thead>
-            <tbody class="tableBody">
-                <!--Where Employee Data is Added -->
-            </tbody>
-            <tfoot class="tableFoot">
-
-            </tfoot>
-        </table>
-    </main>
+    <section id="inputWindow">
+        <input class="inputField" id="firstName" placeholder="First Name" type="text">
+        <input class="inputField" id="lastName" placeholder="Last Name" type="text">
+        <input class="inputField" id="empID" placeholder="ID" type="number">
+        <input class="inputField" id="empTitle" placeholder="Title" type="text">
+        <input class="inputField" id="annualSalary" placeholder="Annual Salary" type="number">
+        <div id="buttonWindow">
+            <button id="add-btn">Submit</button>
+        </div>
+        <div id="imageWindow">
+            <img src="Other/office.jpeg">
+        </div>
+    </section>
+    <table>
+        <thead id="tableHead">
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Employee ID</td>
+                <td>Title</td>
+                <td>Annual Salary</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!--Where Employee Data is Added -->
+        </tbody>
+        <tfoot id="tableFoot">
+            <!-- Where the Total Salary is Added -->
+        </tfoot>
+    </table>
 </body>
 </html>
