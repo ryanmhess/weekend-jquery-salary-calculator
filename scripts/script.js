@@ -26,7 +26,7 @@ function employeeAssign(employee){
     <tr>
         <td>${employee.firstName}</td>
         <td>${employee.lastName}</td>
-        <td>${employee.empID}</td>
+        <td id="${employee.empID}">${employee.empID}</td>
         <td>${employee.empTitle}</td>
         <td>${employee.annualSalary}</td>
         <td>
@@ -43,13 +43,11 @@ function employeeAdd(){
         empTitle: $('#empTitle').val(),
         annualSalary: Number($('#annualSalary').val())
     }
-    employees.push(employeeNew)
+    employees.push(employeeNew);
+    console.log($('#empID').val());
     employeeList();
 }   //  end employeeNew function
 
 function employeeDelete(){
-    console.log($(this));
-    $(this).filter(employees);
     $(this).closest('tr').remove();
-    
 }   //  end employeeDelete function
