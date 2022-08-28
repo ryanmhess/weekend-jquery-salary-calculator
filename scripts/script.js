@@ -27,13 +27,13 @@ function employeeList(){
 
 function employeeAssign(employee){
     $('#tableBody').append(`
-    <tr>
-        <td>${employee.firstName}</td>
-        <td>${employee.lastName}</td>
-        <td>${employee.empID}</td>
-        <td>${employee.empTitle}</td>
-        <td>${employee.annualSalary}</td>
-        <td>
+    <tr class="tr1">
+        <td class="td1">${employee.firstName}</td>
+        <td class="td2">${employee.lastName}</td>
+        <td class="td3">${employee.empID}</td>
+        <td class="td4">${employee.empTitle}</td>
+        <td class="td5">$${employee.annualSalary}</td>
+        <td class="td6">
             <button id="${employee.empID}"class="delete-btn">DELETE</button>
         </td>
     </tr>`);
@@ -48,7 +48,7 @@ function employeeAdd(){
         empTitle: $('#empTitle').val(),
         annualSalary: Number($('#annualSalary').val())
     }
-    employees.push(employeeNew);
+    employees.unshift(employeeNew);
     employeeList();
 }   //  end employeeAdd function
 
@@ -73,7 +73,7 @@ function employeeSalaryTotal(employee){
     annualSalaryTotal += employee.annualSalary;
     $('#tableFoot').empty();
     $('#tableFoot').append(`
-    <tr>
-        <td>${annualSalaryTotal}</td>
+    <tr class="tr2">
+        <td class="td7">$${annualSalaryTotal}</td>
     </tr>`);
 }   //  end employeeSalaryTotal function

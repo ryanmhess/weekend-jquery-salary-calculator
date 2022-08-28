@@ -1,5 +1,5 @@
 body{
-    background-color: #FFBBB4;
+    background-color: #F35588;
 }
 
 header{
@@ -14,7 +14,10 @@ header{
 
 #inputWindow{
     padding: 5px;
-    background-color: #F35588;
+    background-color: #edbfce;
+    border-style: solid;
+    border-color: #007944;
+    border-width: 3px;
     display: grid;
     height: 25vh;
     grid-template-columns: 1fr 3fr;
@@ -31,7 +34,7 @@ header{
 .inputField{
     margin: 5px;
     border: outset;
-    color: #EFEFEF;
+    color: #000000;
     background-color: #cef1c1;
     border-color: #007944;
     font-weight: bold;
@@ -64,10 +67,6 @@ header{
     font-weight: bold;
 }
 
-#firstName, #lastName, #empID, #empTitle{
-    /* margin-bottom: 10px; */
-}
-
 #buttonWindow{
     grid-area: buttonWindow;
     text-align: center;
@@ -98,10 +97,11 @@ img{
 }
 
 table{
+    background-color: #F35588;
     display: grid;
     height: 25vh;
     grid-template-columns: 4fr;
-    grid-template-rows: 0.5fr 2fr 0.5fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr;
     grid-template-areas: 
         "tableHead"
         "tableBody"
@@ -109,52 +109,133 @@ table{
 }
 
 #tableHead{
-    background-color: chartreuse;
+    background-color: #FFBBB4;
     grid-area: tableHead;
-    width: 100vh;
+    border-style: solid;
+    border-color: #007944;
+    border-width: 3px;
+    width: 80%;
+    justify-self: center;
+    margin: 0.6%;
+    font-size: 24px;
+    text-align: center;
+}
+
+.tr0{
+    display: flex;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: underline;
+    padding: 2px;
+}
+
+.td1{
+    flex: 1;
+    order: 1;
+}
+
+.td2{
+    flex: 1;
+    order: 2;
+}
+
+.td3{
+    flex: 1;
+    order: 3;
+}
+
+.td4{
+    flex: 1;
+    order: 4;
+}
+
+.td5{
+    flex: 1;
+    order: 5;
+}
+
+.td6{
+    flex: 1;
+    order: 6;
 }
 
 #tableBody{
-    background-color: #EFEFEF;
+    background-color: #edbfce;
     grid-area: tableBody;
-    width: 100vh;
+    width: 80%;
+    justify-self: center;
+    margin: 0.6%;
+    padding-top: 3px;
+    border-style: solid;
+    border-color: #007944;
+    border-width: 3px;
+}
+
+.tr1{
+    display: flex;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 2px;
+}
+
+.td1{
+    flex: 1;
+    order: 1;
+}
+
+.td2{
+    flex: 1;
+    order: 2;
+}
+
+.td3{
+    flex: 1;
+    order: 3;
+}
+
+.td4{
+    flex: 1;
+    order: 4;
+}
+
+.td5{
+    flex: 1;
+    order: 5;
+}
+
+.td6{
+    flex: 1;
+    order: 6;
 }
 
 #tableFoot{
-    background-color: #007944;
+    background-color: #71A95A;
     grid-area: tableFoot;
-    width: 100vh;
+    width: 80%;
+    justify-self: center;
+    margin: 0.6%;
+    display: inline-block;
+    text-align: right;
+    border-style: solid;
+    border-color: #007944;
+    border-width: 3px;
 }
 
-/* table {
-    border-collapse: collapse;
-    width: 100%;
-} */
+.tr2{
+    display: flex;
+    text-align: right;
+    padding: 2px;
+}
 
-/* th, td {
-    text-align: left;
-    padding: 8px;
-} */
+.td7{
+    order: 6;
+    text-align: right;
+    font-size: 36px;
+    font-weight: bolder;
+}
 
-/* tr:nth-child(even){
+tr:nth-child(even){
     background-color: #f2f2f2;
-} */
-
-/* th {
-    background-color: #2C3852;
-    color: white;
-    font-size: 18px;
-} */
-
-/* button {
-    margin: 10px;
-    background-color: #2C3852;
-    border: ridge;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-} */
+} 
