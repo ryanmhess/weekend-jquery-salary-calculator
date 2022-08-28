@@ -3,9 +3,9 @@ const employeeOne = {firstName: 'Roy', lastName: 'Smith', empID: 9623, empTitle:
 const employeeTwo = {firstName: 'Thorin', lastName: 'Charlie', empID: 8724, empTitle: 'Support Team', annualSalary: 58000};
 const employeeThree = {firstName: 'Cedar', lastName: 'Charlie', empID: 4521, empTitle: 'Team Lead', annualSalary: 80000};
 
-const employees = [employeeOne, employeeTwo, employeeThree];
+let employees = [employeeOne, employeeTwo, employeeThree];
 
-let idCount = 0;
+let annualSalaryTotal;
 
 $(document).ready(readyNow);
 
@@ -14,26 +14,27 @@ function readyNow() {
     $('#add-btn').on('click', employeeAdd);
     $('#remove-btn').on('click', employeeAdd);
     $(document).on('click', '.delete-btn', employeeDelete)
-}
+}   //  end readyNow function
 
 function employeeList(){
     $('.tableBody').empty();
+    annualSalaryTotal = 0;
     for(let employee of employees){
         employeeAssign(employee);
+        employeeSalaryTotal(employee);
     }
 }   //  end employeeList function
 
 function employeeAssign(employee){
-    idCount++;
     $('.tableBody').append(`
-    <tr id="${idCount}">
+    <tr>
         <td>${employee.firstName}</td>
         <td>${employee.lastName}</td>
         <td>${employee.empID}</td>
         <td>${employee.empTitle}</td>
         <td>${employee.annualSalary}</td>
         <td>
-            <button class="delete-btn">DELETE</button>
+            <button id="${employee.empID}"class="delete-btn">DELETE</button>
         </td>
     </tr>`);
     employeeInputClear();
@@ -48,9 +49,8 @@ function employeeAdd(){
         annualSalary: Number($('#annualSalary').val())
     }
     employees.push(employeeNew);
-    console.log($('#empID').val());
     employeeList();
-}   //  end employeeNew function
+}   //  end employeeAdd function
 
 function employeeInputClear(){
     $('#firstName').val('');
@@ -61,7 +61,19 @@ function employeeInputClear(){
 }   //  end employeeInputClear function
 
 function employeeDelete(){
-    console.log($(this).closest('tr').val());
-    console.log($(this).attr(('id')));
     $(this).closest('tr').remove();
+    let deleteID = Number($(this).attr('id'));
+    employees = employees.filter(function(ele){
+        return ele.empID !== deleteID;
+    });
+    employeeList();
 }   //  end employeeDelete function
+
+function employeeSalaryTotal(employee){
+    annualSalaryTotal += employee.annualSalary;
+    $('.tableFoot').empty();
+    $('.tableFoot').append(`
+    <tr>
+        <td>${annualSalaryTotal}</td>
+    </tr>`);
+}   //  end employeeSalaryTotal function
