@@ -5,6 +5,8 @@ const employeeThree = {firstName: 'Cedar', lastName: 'Charlie', empID: 4521, emp
 
 const employees = [employeeOne, employeeTwo, employeeThree];
 
+let idCount = 0;
+
 $(document).ready(readyNow);
 
 function readyNow() {
@@ -22,17 +24,19 @@ function employeeList(){
 }   //  end employeeList function
 
 function employeeAssign(employee){
+    idCount++;
     $('.tableBody').append(`
-    <tr>
+    <tr id="${idCount}">
         <td>${employee.firstName}</td>
         <td>${employee.lastName}</td>
-        <td id="${employee.empID}">${employee.empID}</td>
+        <td>${employee.empID}</td>
         <td>${employee.empTitle}</td>
         <td>${employee.annualSalary}</td>
         <td>
             <button class="delete-btn">DELETE</button>
         </td>
     </tr>`);
+    employeeInputClear();
 }   //  end employeeAssign function
 
 function employeeAdd(){
@@ -48,6 +52,16 @@ function employeeAdd(){
     employeeList();
 }   //  end employeeNew function
 
+function employeeInputClear(){
+    $('#firstName').val('');
+    $('#lastName').val('');
+    $('#empID').val('');
+    $('#empTitle').val('');
+    $('#annualSalary').val('');
+}   //  end employeeInputClear function
+
 function employeeDelete(){
+    console.log($(this).closest('tr').val());
+    console.log($(this).attr(('id')));
     $(this).closest('tr').remove();
 }   //  end employeeDelete function
