@@ -134,7 +134,7 @@ function employeeSalaryTotal(employee){
     $('#tableFoot').empty();
     $('#tableFoot').append(`
     <tr class="tr2">
-        <td class="td7">$${annualSalaryTotal}</td>
+        <td class="td7">Total Annual Salary:  $${annualSalaryTotal}</td>
     </tr>`);
 }   //  end employeeSalaryTotal function
 
