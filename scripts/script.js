@@ -125,17 +125,22 @@ function employeeDelete(){
 
 /*
 When this function is called, the annualSalaryTotal variable is incrementally increased based on 
-employee data input. After the variable is incremented, the table footer is cleared, removing
-the old value and then append to add the most current value.
+employee data input and then converted to a monthly total. After the monthly total is calculated, 
+the table footer is cleared, removing the old value and then append to add the most current value.
+Finally, if the monthly total exceeds $20,000 the text is changed to red.
 */
 
 function employeeSalaryTotal(employee){
     annualSalaryTotal += employee.annualSalary;
+    let monthlyTotal = annualSalaryTotal/12;
     $('#tableFoot').empty();
     $('#tableFoot').append(`
     <tr class="tr2">
-        <td class="td7">Total Annual Salary:  $${annualSalaryTotal}</td>
+        <td id="monthlySalary" class="td7">Total Monthly Salary:  $${monthlyTotal}</td>
     </tr>`);
+    if(monthlyTotal > 20000){
+        $('#monthlySalary').css('color','red');
+    }
 }   //  end employeeSalaryTotal function
 
 //-----------------------------------------------------------------------------------------------//
