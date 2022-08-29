@@ -3,6 +3,8 @@ body{
 }
 
 header{
+    min-width: 803px;
+    min-height: 213px;
     text-align: center;
     font-size: 40px;
     border-style: solid;
@@ -13,6 +15,8 @@ header{
 }
 
 #inputWindow{
+    min-width: 1070px;
+    min-height: 243px;
     padding: 5px;
     background-color: #edbfce;
     border-style: solid;
@@ -90,13 +94,16 @@ header{
     grid-area: imageWindow;
     object-fit: contain;
     overflow: hidden;
+    min-width: 200px;
 }
 
 img{  
     width: 100%;
+    min-width: 400px;
 }
 
 table{
+    
     background-color: #F35588;
     display: grid;
     height: 25vh;
@@ -109,6 +116,7 @@ table{
 }
 
 #tableHead{
+    min-width: 934px;
     background-color: #FFBBB4;
     grid-area: tableHead;
     border-style: solid;
@@ -161,6 +169,7 @@ table{
 }
 
 #tableBody{
+    min-width: 934px;
     background-color: #edbfce;
     grid-area: tableBody;
     width: 80%;
@@ -211,6 +220,7 @@ table{
 }
 
 #tableFoot{
+    min-width: 934px;
     background-color: #71A95A;
     grid-area: tableFoot;
     width: 80%;

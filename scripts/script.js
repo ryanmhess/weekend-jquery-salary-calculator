@@ -9,6 +9,8 @@ let annualSalaryTotal;
 
 $(document).ready(readyNow);
 
+//----------------------------------------------------------------
+
 function readyNow() {
     employeeList(employees);
     $('#add-btn').on('click', employeeAdd);
@@ -63,8 +65,8 @@ function employeeInputClear(){
 function employeeDelete(){
     $(this).closest('tr').remove();
     let deleteID = Number($(this).attr('id'));
-    employees = employees.filter(function(ele){
-        return ele.empID !== deleteID;
+    employees = employees.filter(function(employeeSelection){
+        return employeeSelection.empID !== deleteID;
     });
     employeeList();
 }   //  end employeeDelete function
